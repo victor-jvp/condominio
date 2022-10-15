@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('phone2', 35);
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

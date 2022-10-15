@@ -20,7 +20,10 @@ return new class extends Migration
             $table->integer('number', 4);
             $table->string('address')->nullable()->default(null);
 
+            $table->foreign('ownder_id')->references('id')->on('owners')->nullOnDelete();
+
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
