@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
 
             $table->unsignedBigInteger('owner_id');
-            $table->integer('number', 4);
+            $table->integer('house_num');
             $table->string('address')->nullable()->default(null);
 
-            $table->foreign('ownder_id')->references('id')->on('owners')->nullOnDelete();
+            $table->foreign('owner_id')->references('id')->on('owners');
 
             $table->timestamps();
             $table->softDeletes();
